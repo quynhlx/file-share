@@ -1,0 +1,13 @@
+// :host {
+//     display: flex;
+//     .menu {
+//         flex: 1;
+//     }
+//     app-files {
+//         flex: 2;
+//     }
+// }
+:host {
+    display: block;
+    border: 2px black solid;
+}

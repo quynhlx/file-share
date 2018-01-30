@@ -1,0 +1,19 @@
+<h1>{{title}}</h1>
+<div>
+  <input [(ngModel)]="keyword" type="text" placeholder="Search">
+  <button (click)="search()">Search</button>
+  <button (click)="get()">Get</button>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Modified</th>
+      <th>Members</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr app-file *ngFor="let file of files" [file]="file" [onDownload2]="download" ></tr>
+  </tbody>
+</table>

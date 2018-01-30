@@ -1,0 +1,25 @@
+$primary-color: rgb(54, 54, 54);
+$height: 60px;
+h1 {
+    color: $primary-color;
+}
+table {
+    width: 100%;
+    tr { 
+        height: $height;
+    }
+    th {
+        color:$primary-color;
+    }
+    td {
+        color: $primary-color;
+    }
+}
+:host {
+    display: block;
+    border: 1px red solid;
+}
+
+tr {
+    border: 1px blue solid;
+}
