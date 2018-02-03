@@ -1,10 +1,9 @@
 <input [(ngModel)]="keyword" type="text" placeholder="Search">
   <button (click)="search()">Search</button>
 <ul>
-  <li>Menu 1</li>
-  <li>Menu 2</li>
-  <li>Menu 3</li>
-  <li>Menu 4</li>
+  <li [routerLink]="['files']">Files</li>
+  <li [routerLink]="['trash']">Trash</li>
+  <li [routerLink]="['/login']">Logout</li>
 </ul>
 
 <h3>Account Name</h3>

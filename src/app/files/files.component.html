@@ -2,7 +2,7 @@
 <div>
   <input [(ngModel)]="keyword" type="text" placeholder="Search">
   <button (click)="search()">Search</button>
-  <button (click)="get()">Get</button>
+  <button>Get</button>
 </div>
 <table>
   <thead>
@@ -14,6 +14,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr app-file *ngFor="let file of files" [file]="file" [onDownload2]="download" ></tr>
+    <!-- <tr app-file *ngFor="let file of files" (click)="goToFolder(file)" [file]="file" [onDownload2]="download" ></tr> -->
+    <tr app-file *ngFor="let file of files" [routerLink]="[file._id]"
+    [file]="file" [onDownload2]="download" ></tr>
   </tbody>
 </table>
