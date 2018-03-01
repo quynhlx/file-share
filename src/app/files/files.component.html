@@ -14,7 +14,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr app-file *ngFor="let file of files" [routerLink]="[file._id]"
+    <tr app-file *ngFor="let file of files" [routerLink]="['/home/files',file._id]"
     [file]="file" [onDownload2]="download" ></tr>
   </tbody>
 </table>
