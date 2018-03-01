@@ -14,23 +14,13 @@ export class FilesComponent implements OnInit, OnDestroy, OnChanges {
   title: String = 'JANETO';
   keyword: String = '';
   query = {
-    "search": "",
-    "parentId": "root"
+    'search': '',
+    'parentId': 'root'
   };
   constructor(private _fileService: FileService,
     private toastr: ToastrService,
     private route: ActivatedRoute,
     private router: Router) {
-    this.route.params.subscribe(params => {
-      let id = params['id'] || 'root';
-      this.query.parentId = id;
-      this._fileService.getFiles(this.query);
-    });
-    this._fileService.getFiles(this.query);
-    this._fileService.files.
-      subscribe((files) => {
-        this.files = files
-      });
   }
 
   download: any = (title: String) => {
@@ -42,7 +32,15 @@ export class FilesComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   ngOnInit() {
-    console.log('ngOnInit');
+    let id = this.route.snapshot.paramMap.get('id') || 'root';
+    
+    this.query.parentId = id;
+    this._fileService.getFiles(this.query);
+    
+    this._fileService.files.
+      subscribe((files) => {
+        this.files = files
+      });
   }
 
   ngOnDestroy() {
@@ -54,8 +52,8 @@ export class FilesComponent implements OnInit, OnDestroy, OnChanges {
 
   goToFolder(file: IFile) {
     this._fileService.getFiles({
-      "search": "",
-      "parentId": file._id
+      'search': '',
+      'parentId': file._id
     });
   }
 

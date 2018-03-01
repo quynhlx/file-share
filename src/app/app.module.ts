@@ -1,7 +1,8 @@
+import { HomeGuard } from './services/home-guard.service';
 import { MemberPipe } from './pipes/member.pipe';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FilesComponent } from './files/files.component';
 import { FileComponent } from './files/file/file.component';
@@ -37,7 +38,7 @@ import { AppRoutingModule } from './app.routing';
     ToastrModule.forRoot(),
     AppRoutingModule
   ],
-  providers: [FileService],
+  providers: [FileService, HomeGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

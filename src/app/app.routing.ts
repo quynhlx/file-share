@@ -5,10 +5,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
 import { TrashComponent } from './trash/trash.component';
+import { HomeGuard } from './services/home-guard.service';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: LayoutComponent, children: [
+  { path: 'home', component: LayoutComponent, canActivate: [HomeGuard] , children: [
       {path: '', redirectTo: 'files', pathMatch: 'full'},
       {path: 'files', component: FilesComponent},
       {path: 'files/:id', component: FilesComponent},
@@ -16,7 +17,6 @@ const routes: Routes = [
   ] },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent}
-  
 ];
 
 @NgModule({

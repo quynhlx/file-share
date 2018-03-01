@@ -15,9 +15,9 @@ export class FileService {
     return this._files.asObservable();
   }
   getFiles(body) {
-    return this.http.post('http://localhost:3001/api/file/find', body).map(data => {
+    return this.http.post('http://fisa.lexuanquynh.com/api/file/find', body).map(data => {
        this._files.next(data as IFile[]);
-       this.toastr.success('Thanh cong', 'Du lieu da duoc tai ve');
+      //  this.toastr.success('Thanh cong', 'Du lieu da duoc tai ve');
        return data;
     }).catch(error => {
         this.toastr.error(error.message, 'That bai');
