@@ -24,8 +24,6 @@ import { AuthModule } from './auth/auth.module';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     AppRoutingModule,
-    AuthModule,
-    FileModule,
     CoreModule
   ],
   providers: [],

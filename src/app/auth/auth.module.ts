@@ -14,7 +14,7 @@ import { SharedModule } from '../shared/shared.module';
         }, {
             path: 'register', component: RegisterComponent
         }])],
-    exports: [LoginComponent, RegisterComponent],
+    exports: [],
     declarations: [LoginComponent, RegisterComponent],
     providers: [],
 })
