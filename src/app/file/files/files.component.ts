@@ -1,8 +1,8 @@
-import { IFile } from './../models/IFile';
 import { Component, Input, OnInit, OnDestroy, OnChanges } from '@angular/core';
-import { FileService } from '../providers/file.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router, ActivatedRoute } from '@angular/router';
+import { FileService } from '../../core/providers/file.service';
+import { IFile } from '../../models/IFile';
 @Component({
   selector: 'app-files',
   templateUrl: './files.component.html',

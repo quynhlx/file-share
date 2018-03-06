@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-trash',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrashComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    const value = this.route.snapshot.paramMap.get('id');
+    const search = this.route.snapshot.paramMap.get('search');
+    alert(search);
   }
 
 }

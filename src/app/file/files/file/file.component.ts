@@ -1,5 +1,5 @@
+import { IFile } from './../../../models/IFile';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { IFile } from '../../models/IFile';
 
 @Component({
   selector: '[app-file]',

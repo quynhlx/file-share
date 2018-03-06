@@ -2,7 +2,7 @@
 <div>
   <input [(ngModel)]="keyword" type="text" placeholder="Search">
   <button (click)="search()">Search</button>
-  <button>Get</button>
+  <button [routerLink]="['/home/trash', {id: 'janeto', search: 'laptrinhvien'}]">Go to Trash</button>
 </div>
 <table>
   <thead>

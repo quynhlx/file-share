@@ -1,4 +1,4 @@
-import { IFile } from './../models/IFile';
+import { IFile } from './../../models/IFile';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Http } from '@angular/http';

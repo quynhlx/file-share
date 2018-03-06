@@ -1,21 +1,14 @@
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { FilesComponent } from './files/files.component';
-import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
-import { TrashComponent } from './trash/trash.component';
-import { HomeGuard } from './services/home-guard.service';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'home', component: LayoutComponent, canActivate: [HomeGuard] , children: [
-      {path: '', redirectTo: 'files', pathMatch: 'full'},
-      {path: 'files', component: FilesComponent},
-      {path: 'files/:id', component: FilesComponent},
-      {path: 'trash', component: TrashComponent}
-  ] },
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'auth', loadChildren: './auth/auth.module#AuthModule'},
+  { path: 'home', component: LayoutComponent, children: [{
+    path: '', loadChildren: './file/file.module#FileModule'
+  }]},
+  { path: '', redirectTo: 'auth', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent}
 ];
 
@@ -25,4 +18,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routedComponents = [LoginComponent];
+export const routedComponents = [];
